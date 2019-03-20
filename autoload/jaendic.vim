@@ -51,6 +51,8 @@ def translate(word):
     return text
 
 def include_ja(word):
+    if word.isdecimal():
+        return True
     for w in word:
         name = unicodedata.name(w)
         if "CJK UNIFIED" in name \
